@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Posicionamiento Web</title>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        display: flex;
+        height: 100vh;
+        background: #f4f4f4;
+    }
+
+    /* PANEL IZQUIERDO */
+    .sidebar {
+        width: 30%;
+        background: linear-gradient(180deg, #0077ff, #4fc3ff);
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        box-shadow: 5px 0 15px rgba(0,0,0,0.15);
+    }
+
+    .sidebar h2 {
+        color: white;
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    .btn {
+        background: white;
+        border: none;
+        padding: 25px;
+        font-size: 1.4rem;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: .3s;
+        font-weight: bold;
+    }
+
+    .btn:hover {
+        background: #dff3ff;
+        transform: scale(1.05);
+    }
+
+    /* PANEL DERECHO */
+    .content {
+        flex: 1;
+        padding: 40px;
+        background: white;
+        overflow-y: auto;
+    }
+
+    .content h2 {
+        font-size: 2.3rem;
+        margin-bottom: 15px;
+    }
+
+    .content p {
+        font-size: 1.3rem;
+        line-height: 1.7;
+    }
+
+    footer {
+        position: absolute;
+        bottom: 10px;
+        right: 20px;
+        font-size: 1.1rem;
+        color: #777;
+    }
+</style>
+</head>
+
+<body>
+
+    <div class="sidebar">
+        <h2>Posicionamiento Web</h2>
+
+        <button class="btn" onclick="mostrar('seo')">SEO</button>
+        <button class="btn" onclick="mostrar('sem')">SEM</button>
+        <button class="btn" onclick="mostrar('visibilidad')">Visibilidad en Resultados</button>
+    </div>
+
+    <div class="content" id="info">
+        <h2>Pícale a la izquierda</h2>
+        <p>
+            El posicionamiento web es el conjunto de estrategias que permiten que un sitio aparezca en los primeros
+            lugares de los motores de búsqueda como Google.  
+            Su objetivo principal es aumentar la **visibilidad**, el **tráfico** y la **autoridad** de una página.  
+            Incluye el trabajo orgánico (SEO) y pagado (SEM).
+        </p>
+    </div>
+
+    <footer>Axel David Aguilar Ballesteros</footer>
+
+<script>
+    function mostrar(seccion) {
+        let info = document.getElementById("info");
+
+        if (seccion === "seo") {
+            info.innerHTML = `
+                <h2>SEO</h2>
+                <p>
+                    SEO (Search Engine Optimization) es el proceso de optimizar una página web para aparecer
+                    de manera orgánica en los primeros resultados de Google.  
+                    Incluye uso de palabras clave, velocidad del sitio, contenido optimizado, estructura correcta y enlaces.
+                </p>`;
+        }
+
+        if (seccion === "sem") {
+            info.innerHTML = `
+                <h2>SEM</h2>
+                <p>
+                    SEM (Search Engine Marketing) consiste en campañas pagadas dentro de Google Ads para obtener
+                    visibilidad inmediata.  
+                    Es útil para llegar a más usuarios rápidamente a través de anuncios.
+                </p>`;
+        }
+
+        if (seccion === "visibilidad") {
+            info.innerHTML = `
+                <h2>Visibilidad en Resultados</h2>
+                <p>
+                    La visibilidad en resultados se refiere a qué tan frecuentemente y en qué posición aparece
+                    tu sitio en los buscadores.  
+                    Un mayor posicionamiento significa más clics, más tráfico y mejores oportunidades de venta o difusión.
+                </p>`;
+        }
+    }
+</script>
+
+</body>
+</html>
+|
